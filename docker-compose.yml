@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    container_name: hangman_app
+    build: 
+      context: config/dev
+      args:
+        - MIX_ENV=dev
+    volumes:
+      - .:/app
+      - ~/.gitconfig:/root/.gitconfig
+      - ~/.ssh:/root/.ssh
+    ports:
+      - "4000:4000"

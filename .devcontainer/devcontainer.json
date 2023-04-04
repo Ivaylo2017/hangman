@@ -1,0 +1,53 @@
+{
+  "name": "Docker Phoenix",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
+  "forwardPorts": [
+    4000
+  ],
+  "shutdownAction": "stopCompose",
+  "extensions": [
+    "bradlc.vscode-tailwindcss",
+    "florinpatrascu.vscode-elixir-snippets",
+    "GitHub.copilot",
+    "jakebecker.elixir-ls",
+    "mechatroner.rainbow-csv",
+    "pantajoe.vscode-elixir-credo",
+    "pcbowers.alpine-intellisense",
+    "petalframework.vscode-petal-components-snippets",
+    "phoenixframework.phoenix",
+    "ms-azuretools.vscode-docker"
+  ],
+  "settings": {
+    "terminal.integrated.profiles.linux": {
+      "zsh": {
+        "path": "/bin/zsh"
+      },
+    },
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "files.associations": {
+      "*.heex": "phoenix-heex"
+    },
+    "[elixir]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "JakeBecker.elixir-ls"
+    },
+    "[phoenix-heex]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "JakeBecker.elixir-ls"
+    },
+    "alpine-intellisense.settings.languageScopes": "html,phoenix-heex",
+    "emmet.includeLanguages": {
+      "html-eex": "html",
+      "phoenix-heex": "html",
+      "elixir": "html"
+    },
+    "tailwindCSS.emmetCompletions": true,
+    "tailwindCSS.includeLanguages": {
+      "phoenix-heex": "html",
+      "elixir": "html"
+    },
+    "elixirLS.enableTestLenses": true
+  }
+}
