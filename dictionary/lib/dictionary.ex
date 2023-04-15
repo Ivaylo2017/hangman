@@ -1,22 +1,11 @@
 defmodule Dictionary do
-  @moduledoc """
-  Documentation for `Dictionary`.
-  """
-  @word_list "assets/words.txt"
-             |> File.read!()
-             |> String.split(~r/\n/, trim: true)
+  alias Dictionary.Impl.WordList
 
-  def random_word do
-    @word_list
-    |> Enum.random()
-  end
+  @opaque t :: WordList.t()
 
-  def swap_tuple({a, b}), do: {b, a}
-  # IO.puts("{#{b},#{a}}")
-  # IO.inspect({b, a}, label: "tuple")
-  # end
+  @spec start() :: t
+  defdelegate start, to: WordList, as: :word_list
 
-  # def param_match(a, b), do: a == b
-  def param_match(a, a), do: true
-  def param_match(a, b), do: false
+  @spec random_word(t) :: String.t()
+  defdelegate random_word(word_list), to: WordList
 end
