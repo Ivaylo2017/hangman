@@ -12,8 +12,11 @@ defmodule TextClient.MixProject do
   end
 
   # Run "mix help compile.app" to learn about applications.
+  # Add included_applications config so that Hangman is loaded in text_client context
+  # but it doesn't start a process. Usually though this will be handled at Phoenix framework level
   def application do
     [
+      included_applications: [:hangman],
       extra_applications: [:logger]
     ]
   end
